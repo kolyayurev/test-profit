@@ -15,10 +15,10 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+                    <x-nav-link :href="route('posts.index')" :active="request()->is('posts*')">
                         {{ __('Posts') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('comments.index')" :active="request()->routeIs('comments.index')">
+                    <x-nav-link :href="route('comments.index')" :active="request()->is('comments*')">
                         {{ __('Comments') }}
                     </x-nav-link>
                 </div>
@@ -73,10 +73,10 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+            <x-responsive-nav-link :href="route('posts.index')" :active="request()->is('posts*')">
                 {{ __('Posts') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('comments.index')" :active="request()->routeIs('comments.index')">
+            <x-responsive-nav-link :href="route('comments.index')" :active="request()->is('comments*')">
                 {{ __('Comments') }}
             </x-responsive-nav-link>
         </div>

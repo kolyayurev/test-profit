@@ -44,7 +44,7 @@
                                         <form action="{{ route('comments.destroy',$comment->id) }}" method="POST" class="ml-1">
                                             @csrf
                                             @method('delete')
-                                            <x-danger-button type="submit" :href="route('posts.destroy',$comment->id)">
+                                            <x-danger-button type="submit" >
                                                 {{ __('Edit') }}
                                             </x-danger-button>
                                         </form>
