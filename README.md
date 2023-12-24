@@ -1,4 +1,4 @@
-# Div test
+# Profit test
 
 ## Install project
 - `composer install`
