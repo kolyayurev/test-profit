@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
                  'email' => 'admin@site.com',
             ]);
 
-        $admin->roles()->sync(Role::query()->where('name','Admin')->first());
+        $admin->roles()->sync(Role::query()->where('name','admin')->first());
 
         $editor = User::factory()
             ->create([
@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
                 'email' => 'editor@site.com',
             ]);
 
-        $editor->roles()->sync(Role::query()->where('name','Editor')->first());
+        $editor->roles()->sync(Role::query()->where('name','editor')->first());
 
     }
 }
