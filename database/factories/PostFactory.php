@@ -21,7 +21,6 @@ class PostFactory extends Factory
         return [
             'title' => $title = fake()->unique()->sentence(8),
             'slug' => Str::slug($title),
-            'image' => fake()->filePath(),
             'excerpt' => fake()->text(255),
             'description' => fake()->text(500),
             'user_id' => User::query()->inRandomOrder()->first()->id,

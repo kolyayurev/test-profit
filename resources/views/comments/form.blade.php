@@ -24,6 +24,11 @@
                             <x-input-error :messages="$errors->get('body')" class="mt-2" />
                         </div>
 
+                        <div class="mb-5">
+                            <x-input-label for="post_id" :value="__('Post')" />
+                            <x-select id="post_id" class="block mt-1 w-full" name="post_id" :options="$posts" :selected="$comment->post_id"></x-select>
+                            <x-input-error :messages="$errors->get('post_id')" class="mt-2" />
+                        </div>
 
                         <div class="mt-5">
                             <x-primary-button>

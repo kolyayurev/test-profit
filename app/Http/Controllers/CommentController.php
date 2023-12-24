@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Models\Comment;
 use App\Repositories\CommentRepository;
+use App\Repositories\PostRepository;
 use App\Services\CommentService;
 
 class CommentController extends Controller
@@ -14,6 +15,7 @@ class CommentController extends Controller
     public function __construct(
         protected CommentService $service,
         protected CommentRepository $repository,
+        protected PostRepository $postRepository,
     )
     {
     }
@@ -38,7 +40,9 @@ class CommentController extends Controller
 
         $comment = new Comment();
 
-        return view('comments.form', compact('comment'));
+        $posts = $this->postRepository->getForSelect();
+
+        return view('comments.form', compact('comment','posts'));
     }
 
     /**
@@ -68,7 +72,9 @@ class CommentController extends Controller
     {
         $this->authorize('update',$comment);
 
-        return view('comments.form', compact('comment'));
+        $posts = $this->postRepository->getForSelect();
+
+        return view('comments.form', compact('comment','posts'));
     }
 
     /**

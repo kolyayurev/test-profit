@@ -28,5 +28,10 @@ class PostRepository extends BaseRepository implements PostRepositoryContract
             ->with('user')->paginate($perPage);
     }
 
+    public function getForSelect(): array
+    {
+        return array_column($this->query->get()->toArray(),'title','id');
+    }
+
 
 }

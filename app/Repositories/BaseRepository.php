@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 /**
  * @template TModelClass of Model
@@ -31,6 +32,7 @@ abstract class BaseRepository
     {
         return $this->query->paginate($perPage);
     }
+
 
     public function find(int $id): ?Model
     {

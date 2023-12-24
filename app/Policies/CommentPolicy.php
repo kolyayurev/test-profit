@@ -22,7 +22,7 @@ class CommentPolicy extends BasePolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**

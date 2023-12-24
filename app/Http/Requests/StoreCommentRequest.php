@@ -23,6 +23,7 @@ class StoreCommentRequest extends FormRequest
     {
         return [
             'body' => 'required|string|max:1024',
+            'post_id' => 'required|exists:posts,id',
         ];
     }
 }
